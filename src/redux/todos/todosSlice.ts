@@ -23,11 +23,22 @@ export const todosSlice = createSlice({
     toggleDone: (state, action: PayloadAction<TodoActionPayload>) => {
       const { todoId } = action.payload;
       state.items = state.items.map((todo) =>
-        todo.id === todoId ? { ...todo, isCompleted: !todo.isCompleted } : todo
+        todo.id === todoId ? { ...todo, isDone: !todo.isDone } : todo
       );
+    },
+    toggleDeleted: (state, action: PayloadAction<TodoActionPayload>) => {
+      const { todoId } = action.payload;
+      state.items = state.items.map((todo) =>
+        todo.id === todoId ? { ...todo, isDeleted: !todo.isDeleted } : todo
+      );
+    },
+    permanentlyDelete: (state, action: PayloadAction<TodoActionPayload>) => {
+      const { todoId } = action.payload;
+      state.items = state.items.filter(({ id }) => id !== todoId);
     },
   },
 });
 
-export const { addTodo, toggleDone } = todosSlice.actions;
+export const { addTodo, toggleDone, toggleDeleted, permanentlyDelete } =
+  todosSlice.actions;
 export default todosSlice.reducer;

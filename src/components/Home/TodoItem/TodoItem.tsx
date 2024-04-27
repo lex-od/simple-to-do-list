@@ -15,7 +15,7 @@ const TodoItem: FC<Props> = ({ item, bgColor }) => {
     >
       <h2 className="mb-1 text-xl">{item.title}</h2>
 
-      <TodoActions todoItem={item} />
+      <TodoActions item={item} />
 
       <p>{item.text}</p>
     </li>

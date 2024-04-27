@@ -2,7 +2,7 @@ export interface TodoItem {
   id: string;
   title: string;
   text: string;
-  isCompleted: boolean;
+  isDone: boolean;
   isDeleted: boolean;
 }
 export interface TodosState {
