@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 export const Layout = () => {
   return (
-    <div className="w-[75rem] mx-auto px-4">
+    <div className="max-w-[100rem] mx-auto px-8">
       <Outlet />
     </div>
   );

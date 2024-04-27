@@ -1,0 +1,51 @@
+[
+  {
+    "id": "01",
+    "title": "My note 1",
+    "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias labore vel, fugiat placeat facilis voluptatum est architecto cupiditate. Minima, eaque.",
+    "isCompleted": false,
+    "isDeleted": false
+  },
+  {
+    "id": "02",
+    "title": "My note 2",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis id quis rem dolorem nisi animi aperiam maiores. Id, cum nesciunt!",
+    "isCompleted": false,
+    "isDeleted": false
+  },
+  {
+    "id": "03",
+    "title": "My note 3",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sint in natus fugiat a nostrum veritatis nulla iusto perspiciatis quae.",
+    "isCompleted": false,
+    "isDeleted": false
+  },
+  {
+    "id": "04",
+    "title": "My note 4",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ad quasi veniam nostrum est hic ipsum modi tempore aliquam voluptas?",
+    "isCompleted": false,
+    "isDeleted": false
+  },
+  {
+    "id": "05",
+    "title": "My note 5",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero consequatur, optio distinctio cupiditate praesentium sed maiores voluptatibus labore animi ut?",
+    "isCompleted": false,
+    "isDeleted": false
+  },
+  {
+    "id": "06",
+    "title": "My note 6",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint excepturi cum ducimus sit at, consequuntur dolorem adipisci quisquam nesciunt voluptatum.",
+    "isCompleted": false,
+    "isDeleted": false
+  },
+  {
+    "id": "07",
+    "title": "My note 7",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eum voluptate qui accusamus dolorem earum nam sunt debitis voluptatibus magnam?",
+    "isCompleted": false,
+    "isDeleted": false
+  }
+]

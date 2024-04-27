@@ -1,13 +1,16 @@
 export interface TodoItem {
   id: string;
+  title: string;
   text: string;
+  isCompleted: boolean;
+  isDeleted: boolean;
 }
 
 export interface TodosState {
   items: TodoItem[];
 }
 
-export type NewTodo = TodoItem;
+export type NewTodo = Omit<TodoItem, "isCompleted" | "isDeleted">;
 
 export interface AddTodoPayload {
   newTodo: NewTodo;

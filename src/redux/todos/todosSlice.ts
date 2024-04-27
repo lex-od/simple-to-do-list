@@ -1,12 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { AddTodoPayload, TodosState } from "./todosTypes";
+import mockedTodos from "./mockedTodos.json";
 
 const initialState: TodosState = {
-  items: [
-    { id: "01", text: "My text 1" },
-    { id: "02", text: "My text 2" },
-  ],
+  items: mockedTodos,
 };
 
 export const todosSlice = createSlice({
@@ -14,8 +12,12 @@ export const todosSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action: PayloadAction<AddTodoPayload>) => {
-      const { newTodo } = action.payload;
-      state.items = [newTodo, ...state.items];
+      const todoItem = {
+        ...action.payload.newTodo,
+        isCompleted: false,
+        isDeleted: false,
+      };
+      state.items = [todoItem, ...state.items];
     },
   },
 });
