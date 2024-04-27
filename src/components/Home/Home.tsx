@@ -1,7 +1,7 @@
 import { useAppSelector } from "../../hooks/redux";
 import { getAllTodos } from "../../redux/todos/todosSelectors";
 import { CARD_COLORS } from "./Home.utils";
-import TodoItem from "./_TodoItem";
+import TodoItem from "./TodoItem/TodoItem";
 
 const Home = () => {
   const todos = useAppSelector(getAllTodos);

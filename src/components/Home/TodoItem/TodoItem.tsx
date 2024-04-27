@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { TodoItem as TodoItemType } from "../../redux/todos/todosTypes";
-import { Circle, CircleCheckBig, Trash } from "lucide-react";
+import { TodoItem as TodoItemType } from "../../../redux/todos/todosTypes";
+import TodoActions from "./_TodoActions";
 
 interface Props {
   item: TodoItemType;
@@ -15,12 +15,7 @@ const TodoItem: FC<Props> = ({ item, bgColor }) => {
     >
       <h2 className="mb-1 text-xl">{item.title}</h2>
 
-      <div className="mb-1 flex gap-2">
-        <button>{item.isCompleted ? <CircleCheckBig /> : <Circle />}</button>
-        <button>
-          <Trash />
-        </button>
-      </div>
+      <TodoActions todoItem={item} />
 
       <p>{item.text}</p>
     </li>

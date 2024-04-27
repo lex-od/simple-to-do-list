@@ -1,0 +1,15 @@
+.iconButton {
+  @apply p-1.5 rounded-full text-stone-800 transition-colors duration-200;
+
+  svg {
+    @apply transition-colors duration-200;
+  }
+
+  &:hover {
+    @apply bg-white/30;
+
+    svg {
+      @apply text-white;
+    }
+  }
+}
