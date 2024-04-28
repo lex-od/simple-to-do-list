@@ -7,8 +7,9 @@ import {
   toggleDeleted,
   toggleDone,
 } from "../../redux/todos/todosSlice";
-import TodoForm, { TodoFormValues } from "../TodoForm/TodoForm";
-import TodoActions from "../Home/TodoItem/_TodoActions";
+import TodoForm, { TodoFormValues } from "../../ui/TodoForm/TodoForm";
+import TodoActions from "../../ui/TodoActions/TodoActions";
+import { routes } from "../../routes";
 
 const EditTodo = () => {
   const navigate = useNavigate();
@@ -22,12 +23,12 @@ const EditTodo = () => {
       ...values,
     };
     dispatch(editTodo({ todoData }));
-    navigate("/");
+    navigate(routes.home);
   };
 
   const handlePermanentlyDelete = () => {
     dispatch(permanentlyDelete({ todoId: todo?.id as string }));
-    navigate("/");
+    navigate(routes.home);
   };
 
   return (
@@ -45,7 +46,7 @@ const EditTodo = () => {
           />
           <TodoForm
             onSubmit={handleSubmit}
-            onCancel={() => navigate("/")}
+            onCancel={() => navigate(routes.home)}
             initValues={todo}
           />
         </>

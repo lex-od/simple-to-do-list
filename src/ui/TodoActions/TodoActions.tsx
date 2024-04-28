@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { ArchiveRestore, Circle, CircleCheckBig, Trash } from "lucide-react";
-import { TodoItem } from "../../../redux/todos/todosTypes";
-import IconButton from "../../IconButton/IconButton";
 import clsx from "clsx";
+import { TodoItem } from "../../redux/todos/todosTypes";
+import IconButton from "../IconButton/IconButton";
 
 interface Props {
   item: TodoItem;

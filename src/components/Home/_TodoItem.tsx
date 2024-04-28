@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { TodoItem as TodoItemType } from "../../../redux/todos/todosTypes";
-import { useAppDispatch } from "../../../hooks/redux";
+import { TodoItem as TodoItemType } from "../../redux/todos/todosTypes";
+import { useAppDispatch } from "../../hooks/redux";
 import {
   permanentlyDelete,
   toggleDeleted,
   toggleDone,
-} from "../../../redux/todos/todosSlice";
-import TodoActions from "./_TodoActions";
+} from "../../redux/todos/todosSlice";
+import TodoActions from "../../ui/TodoActions/TodoActions";
 
 interface Props {
   item: TodoItemType;

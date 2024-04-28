@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/redux";
+import { routes } from "../../routes";
+import Button from "../../ui/Button/Button";
 import { CARD_COLORS, TODO_TABS } from "./Home.utils";
-import TodoItem from "./TodoItem/TodoItem";
+import TodoItem from "./_TodoItem";
 import TodoTabs from "./_TodoTabs";
 import NoItems from "./_NoItems";
-import Button from "../Button/Button";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ const Home = () => {
       </ul>
 
       <div>
-        <Button onClick={() => navigate("/add-todo")}>Add todo</Button>
+        <Button onClick={() => navigate(routes.addTodo)}>Add todo</Button>
       </div>
     </div>
   );
