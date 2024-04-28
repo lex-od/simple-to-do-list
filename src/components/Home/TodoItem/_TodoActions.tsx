@@ -2,12 +2,14 @@ import { FC } from "react";
 import { ArchiveRestore, Circle, CircleCheckBig, Trash } from "lucide-react";
 import { TodoItem } from "../../../redux/todos/todosTypes";
 import IconButton from "../../IconButton/IconButton";
+import clsx from "clsx";
 
 interface Props {
   item: TodoItem;
   onChangeDone: () => void;
   onChangeDeleted: () => void;
   onPermanentlyDelete: () => void;
+  className?: string;
 }
 
 const TodoActions: FC<Props> = ({
@@ -15,10 +17,11 @@ const TodoActions: FC<Props> = ({
   onChangeDone,
   onChangeDeleted,
   onPermanentlyDelete,
+  className,
 }) => {
   return (
     <div
-      className="mb-1 flex gap-2 cursor-auto"
+      className={clsx("mb-1 flex gap-2 cursor-auto", className)}
       // Предотвращаем переход по клику на карточке
       onClick={(e) => e.stopPropagation()}
     >

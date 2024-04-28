@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { AddTodoPayload, TodoActionPayload, TodosState } from "./todosTypes";
+import {
+  AddEditTodoPayload,
+  TodoActionPayload,
+  TodosState,
+} from "./todosTypes";
 import mockedTodos from "./mockedTodos.json";
 
 const initialState: TodosState = {
@@ -11,13 +15,19 @@ export const todosSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    addTodo: (state, action: PayloadAction<AddTodoPayload>) => {
+    addTodo: (state, action: PayloadAction<AddEditTodoPayload>) => {
       const todoItem = {
-        ...action.payload.newTodo,
-        isCompleted: false,
+        ...action.payload.todoData,
+        isDone: false,
         isDeleted: false,
       };
       state.items = [todoItem, ...state.items];
+    },
+    editTodo: (state, action: PayloadAction<AddEditTodoPayload>) => {
+      const { todoData } = action.payload;
+      state.items = state.items.map((todo) =>
+        todo.id === todoData.id ? { ...todo, ...todoData } : todo
+      );
     },
 
     toggleDone: (state, action: PayloadAction<TodoActionPayload>) => {
@@ -39,6 +49,11 @@ export const todosSlice = createSlice({
   },
 });
 
-export const { addTodo, toggleDone, toggleDeleted, permanentlyDelete } =
-  todosSlice.actions;
+export const {
+  addTodo,
+  editTodo,
+  toggleDone,
+  toggleDeleted,
+  permanentlyDelete,
+} = todosSlice.actions;
 export default todosSlice.reducer;
