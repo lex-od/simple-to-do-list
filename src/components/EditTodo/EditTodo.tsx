@@ -10,7 +10,7 @@ import {
 import TodoForm, { TodoFormValues } from "../TodoForm/TodoForm";
 import TodoActions from "../Home/TodoItem/_TodoActions";
 
-const TodoDetails = () => {
+const EditTodo = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { todoId } = useParams();
@@ -37,11 +37,11 @@ const TodoDetails = () => {
       {todo ? (
         <>
           <TodoActions
+            className="max-w-xl mb-4 px-2 py-1 rounded-md bg-indigo-300"
             item={todo}
             onChangeDone={() => dispatch(toggleDone({ todoId: todo.id }))}
             onChangeDeleted={() => dispatch(toggleDeleted({ todoId: todo.id }))}
             onPermanentlyDelete={handlePermanentlyDelete}
-            className="max-w-xl mb-4 px-2 py-1 rounded-md bg-indigo-300"
           />
           <TodoForm
             onSubmit={handleSubmit}
@@ -56,4 +56,4 @@ const TodoDetails = () => {
   );
 };
 
-export default TodoDetails;
+export default EditTodo;

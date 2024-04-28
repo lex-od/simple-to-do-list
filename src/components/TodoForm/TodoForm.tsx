@@ -30,6 +30,7 @@ const TodoForm: FC<Props> = ({ onSubmit, onCancel, initValues }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter todo title"
+            maxLength={50}
           />
         </label>
 

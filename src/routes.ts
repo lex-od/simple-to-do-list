@@ -1,4 +1,5 @@
 export const routes = {
   home: "/",
-  todoDetails: "/todo-details/:todoId",
+  editTodo: "/edit-todo/:todoId",
+  addTodo: "/add-todo",
 };

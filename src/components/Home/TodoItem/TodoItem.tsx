@@ -22,8 +22,8 @@ const TodoItem: FC<Props> = ({ item, bgColor }) => {
     <li
       className="min-h-64 p-4 rounded-xl cursor-pointer"
       style={{ backgroundColor: bgColor }}
-      // Это не ссылка, т. к. семантически нельзя вкладывать <button> в <a>
-      onClick={() => navigate(`/todo-details/${item.id}`)}
+      // Не оборачиваю карточку ссылкой, т. к. нельзя вкладывать <button> в <a>
+      onClick={() => navigate(`/edit-todo/${item.id}`)}
     >
       <h2 className="mb-1 text-xl">{item.title}</h2>
 

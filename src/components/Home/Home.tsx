@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/redux";
 import { CARD_COLORS, TODO_TABS } from "./Home.utils";
 import TodoItem from "./TodoItem/TodoItem";
 import TodoTabs from "./_TodoTabs";
 import NoItems from "./_NoItems";
+import Button from "../Button/Button";
 
 const Home = () => {
+  const navigate = useNavigate();
   const [tabIndex, setTabIndex] = useState(0);
   const todos = useAppSelector(TODO_TABS[tabIndex].selector);
 
@@ -15,7 +18,7 @@ const Home = () => {
 
       <TodoTabs tabIndex={tabIndex} onChangeTab={setTabIndex} />
 
-      <ul className="grid grid-cols-[repeat(auto-fill,_minmax(16rem,_1fr))] gap-4">
+      <ul className="mb-4 grid gap-4 grid-cols-[repeat(auto-fill,_minmax(16rem,_1fr))]">
         {todos.map((todo, index) => (
           <TodoItem
             key={todo.id}
@@ -25,6 +28,10 @@ const Home = () => {
         ))}
         {!todos.length && <NoItems />}
       </ul>
+
+      <div>
+        <Button onClick={() => navigate("/add-todo")}>Add todo</Button>
+      </div>
     </div>
   );
 };
