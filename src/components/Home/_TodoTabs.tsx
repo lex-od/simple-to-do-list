@@ -11,9 +11,8 @@ const TodoTabs: FC<Props> = ({ tabIndex, onChangeTab }) => {
   return (
     <ul className="mb-4 flex flex-wrap gap-1">
       {TODO_TABS.map((tab, index) => (
-        <li>
+        <li key={tab.name}>
           <button
-            key={tab.name}
             onClick={() => onChangeTab(index)}
             className={clsx(
               "px-4 py-1 rounded-t hover:bg-indigo-300 transition-colors duration-200",
