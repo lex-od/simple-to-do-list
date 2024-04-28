@@ -3,6 +3,7 @@ import { useAppSelector } from "../../hooks/redux";
 import { CARD_COLORS, TODO_TABS } from "./Home.utils";
 import TodoItem from "./TodoItem/TodoItem";
 import TodoTabs from "./_TodoTabs";
+import NoItems from "./_NoItems";
 
 const Home = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -22,6 +23,7 @@ const Home = () => {
             bgColor={CARD_COLORS[index % CARD_COLORS.length]}
           />
         ))}
+        {!todos.length && <NoItems />}
       </ul>
     </div>
   );
